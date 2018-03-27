@@ -1,0 +1,102 @@
+{
+  "cacheMode" : "NONE",
+  "iterationCount" : 0,
+  "l1ByParam" : { },
+  "l2ByParam" : { },
+  "layer" : {
+    "convolution" : {
+      "activationFn" : {
+        "ReLU" : { }
+      },
+      "adamMeanDecay" : "NaN",
+      "adamVarDecay" : "NaN",
+      "biasInit" : 1.0,
+      "biasLearningRate" : 0.002,
+      "convolutionMode" : "Truncate",
+      "cudnnAlgoMode" : "PREFER_FASTEST",
+      "cudnnBwdDataAlgo" : null,
+      "cudnnBwdFilterAlgo" : null,
+      "cudnnFwdAlgo" : null,
+      "dist" : {
+        "type" : "org.deeplearning4j.nn.conf.distribution.NormalDistribution",
+        "mean" : 0.0,
+        "std" : 0.1
+      },
+      "dropOut" : 0.0,
+      "epsilon" : "NaN",
+      "gradientNormalization" : "RenormalizeL2PerLayer",
+      "gradientNormalizationThreshold" : 1.0,
+      "iupdater" : {
+        "@class" : "org.nd4j.linalg.learning.config.Nesterovs",
+        "learningRate" : 0.001,
+        "momentum" : 0.9
+      },
+      "kernelSize" : [ 3, 3 ],
+      "l1" : 0.0,
+      "l1Bias" : 0.0,
+      "l2" : 5.0E-4,
+      "l2Bias" : 0.0,
+      "layerName" : "cnn1",
+      "learningRate" : 0.001,
+      "learningRateSchedule" : null,
+      "momentum" : 0.9,
+      "momentumSchedule" : { },
+      "nin" : 3,
+      "nout" : 20,
+      "padding" : [ 4, 4 ],
+      "rho" : "NaN",
+      "rmsDecay" : "NaN",
+      "stride" : [ 1, 1 ],
+      "updater" : "NESTEROVS",
+      "weightInit" : "DISTRIBUTION"
+    }
+  },
+  "leakyreluAlpha" : 0.0,
+  "learningRateByParam" : { },
+  "learningRatePolicy" : "Step",
+  "lrPolicyDecayRate" : 0.1,
+  "lrPolicyPower" : "NaN",
+  "lrPolicySteps" : 100000.0,
+  "maxNumLineSearchIterations" : 5,
+  "miniBatch" : false,
+  "minimize" : true,
+  "numIterations" : 1,
+  "optimizationAlgo" : "STOCHASTIC_GRADIENT_DESCENT",
+  "pretrain" : false,
+  "seed" : 42,
+  "stepFunction" : null,
+  "useDropConnect" : false,
+  "useRegularization" : true,
+  "variables" : [ "0_W", "0_b", "1_W", "1_b", "3_W", "3_b", "4_W", "4_b", "6_W", "6_b", "7_W", "7_b", "9_W", "9_b", "10_W", "10_b", "11_W", "11_b" ]
+}
+TypeInput: org.datavec.api.io.filters.BalancedPathFilter
+Batchsize : 24
+Epoche : 15
+Split train: 70.0 %
+Execution time :3.4201333333333332 m
+TYpeNet : PaperNet
+
+Examples labeled as a classified by model as b: 7 times
+Examples labeled as b classified by model as b: 8 times
+Examples labeled as c classified by model as b: 7 times
+Examples labeled as d classified by model as b: 7 times
+
+Warning: 3 classes were never predicted by the model and were excluded from average precision
+Classes excluded from average precision: [0, 2, 3]
+
+==========================Scores========================================
+ # of classes:    4
+ Accuracy:        0,2759
+ Precision:       0,2759	(3 classes excluded from average)
+ Recall:          0,2500
+ F1 Score:        0,4324	(3 classes excluded from average)
+Precision, recall & F1: macro-averaged (equally weighted avg. of 4 classes)
+========================================================================
+
+   Predicted:         0      1      2      3
+   Actual:
+0  a          |       0      7      0      0
+1  b          |       0      8      0      0
+2  c          |       0      7      0      0
+3  d          |       0      7      0      0
+

@@ -1,0 +1,57 @@
+{
+  "cacheMode" : "NONE",
+  "iterationCount" : 0,
+  "l1ByParam" : { },
+  "l2ByParam" : { },
+  "layer" : null,
+  "leakyreluAlpha" : 0.0,
+  "learningRateByParam" : { },
+  "learningRatePolicy" : "None",
+  "lrPolicyDecayRate" : "NaN",
+  "lrPolicyPower" : "NaN",
+  "lrPolicySteps" : "NaN",
+  "maxNumLineSearchIterations" : 5,
+  "miniBatch" : true,
+  "minimize" : true,
+  "numIterations" : 1,
+  "optimizationAlgo" : "STOCHASTIC_GRADIENT_DESCENT",
+  "pretrain" : false,
+  "seed" : 42,
+  "stepFunction" : null,
+  "useDropConnect" : false,
+  "useRegularization" : true,
+  "variables" : [ "block1_conv1_W", "block1_conv1_b", "block1_conv2_W", "block1_conv2_b", "block2_conv1_W", "block2_conv1_b", "block2_conv2_W", "block2_conv2_b", "block3_conv1_W", "block3_conv1_b", "block3_conv2_W", "block3_conv2_b", "block3_conv3_W", "block3_conv3_b", "block3_conv4_W", "block3_conv4_b", "block4_conv1_W", "block4_conv1_b", "block4_conv2_W", "block4_conv2_b", "block4_conv3_W", "block4_conv3_b", "block4_conv4_W", "block4_conv4_b", "block5_conv1_W", "block5_conv1_b", "block5_conv2_W", "block5_conv2_b", "block5_conv3_W", "block5_conv3_b", "block5_conv4_W", "block5_conv4_b", "fc1_W", "fc1_b", "fc2_W", "fc2_b", "predictions_W", "predictions_b" ]
+}
+TypeInput: org.datavec.api.io.filters.BalancedPathFilter
+Batchsize : 5
+Epoche : 5
+Split train: 70.0 %
+Execution time :6.8712333333333335 m
+TYpeNet : VGG19
+
+Examples labeled as a classified by model as d: 1 times
+Examples labeled as b classified by model as a: 1 times
+Examples labeled as b classified by model as c: 1 times
+Examples labeled as c classified by model as c: 1 times
+Examples labeled as c classified by model as d: 1 times
+Examples labeled as d classified by model as a: 1 times
+
+Warning: 1 class was never predicted by the model and was excluded from average precision
+Classes excluded from average precision: [1]
+
+==========================Scores========================================
+ # of classes:    4
+ Accuracy:        0,1667
+ Precision:       0,1667	(1 class excluded from average)
+ Recall:          0,1250
+ F1 Score:        0,1667	(1 class excluded from average)
+Precision, recall & F1: macro-averaged (equally weighted avg. of 4 classes)
+========================================================================
+
+   Predicted:         0      1      2      3
+   Actual:
+0  a          |       0      0      0      1
+1  b          |       1      0      1      0
+2  c          |       0      0      1      1
+3  d          |       1      0      0      0
+

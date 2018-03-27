@@ -1,0 +1,82 @@
+Original Net: {
+  "cacheMode" : null,
+  "iterationCount" : 0,
+  "l1ByParam" : { },
+  "l2ByParam" : { },
+  "layer" : null,
+  "leakyreluAlpha" : 0.0,
+  "learningRateByParam" : { },
+  "learningRatePolicy" : "None",
+  "lrPolicyDecayRate" : "NaN",
+  "lrPolicyPower" : "NaN",
+  "lrPolicySteps" : "NaN",
+  "maxNumLineSearchIterations" : 5,
+  "miniBatch" : true,
+  "minimize" : true,
+  "numIterations" : 1,
+  "optimizationAlgo" : "STOCHASTIC_GRADIENT_DESCENT",
+  "pretrain" : false,
+  "seed" : 1495663009926,
+  "stepFunction" : null,
+  "useDropConnect" : false,
+  "useRegularization" : false,
+  "variables" : [ "block1_conv1_W", "block1_conv1_b", "block1_conv2_W", "block1_conv2_b", "block2_conv1_W", "block2_conv1_b", "block2_conv2_W", "block2_conv2_b", "block3_conv1_W", "block3_conv1_b", "block3_conv2_W", "block3_conv2_b", "block3_conv3_W", "block3_conv3_b", "block4_conv1_W", "block4_conv1_b", "block4_conv2_W", "block4_conv2_b", "block4_conv3_W", "block4_conv3_b", "block5_conv1_W", "block5_conv1_b", "block5_conv2_W", "block5_conv2_b", "block5_conv3_W", "block5_conv3_b", "fc1_W", "fc1_b", "fc2_W", "fc2_b", "predictions_W", "predictions_b" ]
+}
+vgg16Transfer: {
+  "cacheMode" : "NONE",
+  "iterationCount" : 0,
+  "l1ByParam" : { },
+  "l2ByParam" : { },
+  "layer" : null,
+  "leakyreluAlpha" : 0.0,
+  "learningRateByParam" : { },
+  "learningRatePolicy" : "None",
+  "lrPolicyDecayRate" : "NaN",
+  "lrPolicyPower" : "NaN",
+  "lrPolicySteps" : "NaN",
+  "maxNumLineSearchIterations" : 5,
+  "miniBatch" : true,
+  "minimize" : true,
+  "numIterations" : 1,
+  "optimizationAlgo" : "STOCHASTIC_GRADIENT_DESCENT",
+  "pretrain" : false,
+  "seed" : 42,
+  "stepFunction" : null,
+  "useDropConnect" : false,
+  "useRegularization" : true,
+  "variables" : [ "block1_conv1_W", "block1_conv1_b", "block1_conv2_W", "block1_conv2_b", "block2_conv1_W", "block2_conv1_b", "block2_conv2_W", "block2_conv2_b", "block3_conv1_W", "block3_conv1_b", "block3_conv2_W", "block3_conv2_b", "block3_conv3_W", "block3_conv3_b", "block4_conv1_W", "block4_conv1_b", "block4_conv2_W", "block4_conv2_b", "block4_conv3_W", "block4_conv3_b", "block5_conv1_W", "block5_conv1_b", "block5_conv2_W", "block5_conv2_b", "block5_conv3_W", "block5_conv3_b", "fc1_W", "fc1_b", "fc2_W", "fc2_b", "predictions_W", "predictions_b" ]
+}
+Type: VGG16 pretrained with IMageNet
+Learning rate: 0.01
+TypeInput: org.datavec.api.io.filters.BalancedPathFilter
+MainPath: /home/dave/Developer/JavaProject/HandPoseCNN/src/main/resources/my_number_200
+Size width: 224, height: 224, channel: 3
+Con regolarizzazione false
+Batchsize : 9
+Epoche : 8
+Split train: 70.0 %
+Execution time :8.63855 m
+TYpeNet : VGG16
+
+Examples labeled as 1 classified by model as 1: 1 times
+Examples labeled as 1 classified by model as 2: 2 times
+Examples labeled as 2 classified by model as 2: 2 times
+Examples labeled as 3 classified by model as 2: 1 times
+Examples labeled as 3 classified by model as 3: 2 times
+
+
+==========================Scores========================================
+ # of classes:    3
+ Accuracy:        0,6250
+ Precision:       0,8000
+ Recall:          0,6667
+ F1 Score:        0,6238
+Precision, recall & F1: macro-averaged (equally weighted avg. of 3 classes)
+========================================================================
+
+   Predicted:         0      1      2
+   Actual:
+0  1          |       1      2      0
+1  2          |       0      2      0
+2  3          |       0      1      2
+

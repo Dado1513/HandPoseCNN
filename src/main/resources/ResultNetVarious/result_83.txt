@@ -1,0 +1,99 @@
+{
+  "cacheMode" : "NONE",
+  "iterationCount" : 0,
+  "l1ByParam" : { },
+  "l2ByParam" : { },
+  "layer" : {
+    "convolution" : {
+      "activationFn" : {
+        "ReLU" : { }
+      },
+      "adamMeanDecay" : "NaN",
+      "adamVarDecay" : "NaN",
+      "biasInit" : 0.0,
+      "biasLearningRate" : 0.005,
+      "convolutionMode" : "Truncate",
+      "cudnnAlgoMode" : "PREFER_FASTEST",
+      "cudnnBwdDataAlgo" : null,
+      "cudnnBwdFilterAlgo" : null,
+      "cudnnFwdAlgo" : null,
+      "dist" : null,
+      "dropOut" : 0.0,
+      "epsilon" : 1.0E-8,
+      "gradientNormalization" : "None",
+      "gradientNormalizationThreshold" : 1.0,
+      "iupdater" : {
+        "@class" : "org.nd4j.linalg.learning.config.RmsProp",
+        "epsilon" : 1.0E-8,
+        "learningRate" : 0.005,
+        "rmsDecay" : 0.95
+      },
+      "kernelSize" : [ 5, 5 ],
+      "l1" : 0.0,
+      "l1Bias" : 0.0,
+      "l2" : 0.01,
+      "l2Bias" : 0.0,
+      "layerName" : "cnn1",
+      "learningRate" : 0.005,
+      "learningRateSchedule" : null,
+      "momentum" : "NaN",
+      "momentumSchedule" : null,
+      "nin" : 3,
+      "nout" : 50,
+      "padding" : [ 0, 0 ],
+      "rho" : "NaN",
+      "rmsDecay" : 0.95,
+      "stride" : [ 1, 1 ],
+      "updater" : "RMSPROP",
+      "weightInit" : "XAVIER"
+    }
+  },
+  "leakyreluAlpha" : 0.0,
+  "learningRateByParam" : { },
+  "learningRatePolicy" : "None",
+  "lrPolicyDecayRate" : "NaN",
+  "lrPolicyPower" : "NaN",
+  "lrPolicySteps" : "NaN",
+  "maxNumLineSearchIterations" : 5,
+  "miniBatch" : true,
+  "minimize" : true,
+  "numIterations" : 1,
+  "optimizationAlgo" : "STOCHASTIC_GRADIENT_DESCENT",
+  "pretrain" : false,
+  "seed" : 42,
+  "stepFunction" : null,
+  "useDropConnect" : false,
+  "useRegularization" : true,
+  "variables" : [ "0_W", "0_b", "2_W", "2_b", "4_W", "4_b", "5_W", "5_b" ]
+}
+Solo  7 trasformazioni, gesturecompelte 7 classi
+TypeInput: org.datavec.api.io.filters.RandomPathFilter
+IMage Preprocessing: org.nd4j.linalg.dataset.api.preprocessor.VGG16ImagePreProcessor
+MainPath: /home/dave/Developer/JavaProject/HandPoseCNN/src/main/resources/my_number_all
+Size width: 200, height: 250, channel: 3
+Con regolarizzazione true
+Batchsize : 20
+Epoche : 5
+Split train: 70.0 %
+Execution time :402.55015000000003 m
+TYpeNet : LeNet
+
+Examples labeled as 1 classified by model as 1: 504 times
+Examples labeled as 1 classified by model as 2: 1 times
+Examples labeled as 2 classified by model as 1: 110 times
+Examples labeled as 2 classified by model as 2: 350 times
+
+
+==========================Scores========================================
+ # of classes:    2
+ Accuracy:        0,8850
+ Precision:       0,9090
+ Recall:          0,8794
+ F1 Score:        0,8631
+========================================================================
+
+   Predicted:         0      1
+   Actual:
+0  1          |     504      1
+1  2          |     110    350
+

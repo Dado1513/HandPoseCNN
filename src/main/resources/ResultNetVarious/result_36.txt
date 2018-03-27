@@ -1,0 +1,106 @@
+{
+  "cacheMode" : "NONE",
+  "iterationCount" : 0,
+  "l1ByParam" : { },
+  "l2ByParam" : { },
+  "layer" : {
+    "convolution" : {
+      "activationFn" : {
+        "ReLU" : { }
+      },
+      "adamMeanDecay" : "NaN",
+      "adamVarDecay" : "NaN",
+      "biasInit" : 0.0,
+      "biasLearningRate" : 0.001,
+      "convolutionMode" : "Truncate",
+      "cudnnAlgoMode" : "PREFER_FASTEST",
+      "cudnnBwdDataAlgo" : null,
+      "cudnnBwdFilterAlgo" : null,
+      "cudnnFwdAlgo" : null,
+      "dist" : null,
+      "dropOut" : 0.0,
+      "epsilon" : 1.0E-8,
+      "gradientNormalization" : "None",
+      "gradientNormalizationThreshold" : 1.0,
+      "iupdater" : {
+        "@class" : "org.nd4j.linalg.learning.config.RmsProp",
+        "epsilon" : 1.0E-8,
+        "learningRate" : 0.001,
+        "rmsDecay" : 0.95
+      },
+      "kernelSize" : [ 5, 5 ],
+      "l1" : 0.0,
+      "l1Bias" : 0.0,
+      "l2" : 0.01,
+      "l2Bias" : 0.0,
+      "layerName" : "cnn1",
+      "learningRate" : 0.001,
+      "learningRateSchedule" : null,
+      "momentum" : "NaN",
+      "momentumSchedule" : null,
+      "nin" : 3,
+      "nout" : 50,
+      "padding" : [ 0, 0 ],
+      "rho" : "NaN",
+      "rmsDecay" : 0.95,
+      "stride" : [ 1, 1 ],
+      "updater" : "RMSPROP",
+      "weightInit" : "XAVIER"
+    }
+  },
+  "leakyreluAlpha" : 0.0,
+  "learningRateByParam" : { },
+  "learningRatePolicy" : "None",
+  "lrPolicyDecayRate" : "NaN",
+  "lrPolicyPower" : "NaN",
+  "lrPolicySteps" : "NaN",
+  "maxNumLineSearchIterations" : 5,
+  "miniBatch" : true,
+  "minimize" : true,
+  "numIterations" : 1,
+  "optimizationAlgo" : "STOCHASTIC_GRADIENT_DESCENT",
+  "pretrain" : false,
+  "seed" : 42,
+  "stepFunction" : null,
+  "useDropConnect" : false,
+  "useRegularization" : false,
+  "variables" : [ "0_W", "0_b", "2_W", "2_b", "4_W", "4_b", "5_W", "5_b" ]
+}
+TypeInput: org.datavec.api.io.filters.BalancedPathFilter
+Batchsize : 24
+Epoche : 50
+Split train: 70.0 %
+Execution time :0.4046666666666667 m
+TYpeNet : LeNet
+
+Examples labeled as a classified by model as a: 4 times
+Examples labeled as a classified by model as d: 3 times
+Examples labeled as b classified by model as a: 1 times
+Examples labeled as b classified by model as c: 5 times
+Examples labeled as b classified by model as d: 2 times
+Examples labeled as c classified by model as a: 2 times
+Examples labeled as c classified by model as c: 4 times
+Examples labeled as c classified by model as d: 1 times
+Examples labeled as d classified by model as a: 3 times
+Examples labeled as d classified by model as c: 3 times
+Examples labeled as d classified by model as d: 1 times
+
+Warning: 1 class was never predicted by the model and was excluded from average precision
+Classes excluded from average precision: [1]
+
+==========================Scores========================================
+ # of classes:    4
+ Accuracy:        0,3103
+ Precision:       0,2921	(1 class excluded from average)
+ Recall:          0,3214
+ F1 Score:        0,3448	(1 class excluded from average)
+Precision, recall & F1: macro-averaged (equally weighted avg. of 4 classes)
+========================================================================
+
+   Predicted:         0      1      2      3
+   Actual:
+0  a          |       4      0      0      3
+1  b          |       1      0      5      2
+2  c          |       2      0      4      1
+3  d          |       3      0      3      1
+
