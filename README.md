@@ -1,6 +1,9 @@
 # HandPoseCNN
 
-### Java Code for a simple CNN be able to recognize number hand pose from 1 to 5 with accuracy 99%
-### preprocesing Canny
-### see result92 for more information 
-### to download complete dataset --> https://studentiunigeit-my.sharepoint.com/:u:/g/personal/3928125_studenti_unige_it/EWls9OoxKjNJo5txmrJDf40BrBSC7-e_0vyYZS2v6a2Y4A?e=6kz82K
+> A simple CNN be able to recognize numbers from 1 to 5 do with hand pose developed in Java.
+
+> The overall accuracy is over 99%.
+
+> The image is preprocessed using the Canny algorithm, in order to extract only the edge of the image. 
+
+> See [Result](src/main/handposeclassification_result92.zip) for more information about the model used.
